@@ -1,152 +1,323 @@
+---
+# Namespace for Selenium Grid
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: selenium
+  labels:
+    name: selenium
+    purpose: testing
+
+---
+# Selenium Hub Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: selenium-hub
+  namespace: selenium
   labels:
     app: selenium-hub
+    component: hub
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: selenium-hub
+      component: hub
   template:
     metadata:
       labels:
         app: selenium-hub
+        component: hub
     spec:
       containers:
         - name: selenium-hub
-          image: selenium/hub:4.0
+          image: selenium/hub:latest
           ports:
             - containerPort: 4444
+              name: web
+              protocol: TCP
             - containerPort: 4443
+              name: publish
+              protocol: TCP
             - containerPort: 4442
+              name: subscribe
+              protocol: TCP
           resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
             limits:
               memory: "1000Mi"
-              cpu: ".5"
+              cpu: "500m"
+          env:
+            - name: GRID_MAX_SESSION
+              value: "5"
+            - name: GRID_BROWSER_TIMEOUT
+              value: "300"
+            - name: GRID_TIMEOUT
+              value: "300"
           livenessProbe:
             httpGet:
               path: /wd/hub/status
               port: 4444
             initialDelaySeconds: 30
             timeoutSeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
           readinessProbe:
             httpGet:
               path: /wd/hub/status
               port: 4444
             initialDelaySeconds: 30
             timeoutSeconds: 5
+            periodSeconds: 5
+            failureThreshold: 3
+
 ---
+# Selenium Hub Service
 apiVersion: v1
 kind: Service
 metadata:
   name: selenium-hub
+  namespace: selenium
   labels:
     app: selenium-hub
+    component: hub
 spec:
+  type: NodePort
   ports:
     - port: 4444
       targetPort: 4444
-      name: port0
+      name: web
+      protocol: TCP
     - port: 4443
       targetPort: 4443
-      name: port1
+      name: publish
+      protocol: TCP
     - port: 4442
       targetPort: 4442
-      name: port2
+      name: subscribe
+      protocol: TCP
   selector:
     app: selenium-hub
-  type: NodePort
+    component: hub
   sessionAffinity: None
+
 ---
+# Chrome Node Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: selenium-node-chrome
+  namespace: selenium
   labels:
     app: selenium-node-chrome
+    component: node
+    browser: chrome
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: selenium-node-chrome
+      component: node
+      browser: chrome
   template:
     metadata:
       labels:
         app: selenium-node-chrome
+        component: node
+        browser: chrome
     spec:
       volumes:
         - name: dshm
           emptyDir:
             medium: Memory
+            sizeLimit: 2Gi
       containers:
         - name: selenium-node-chrome
-          image: selenium/node-chrome:4.0
+          image: selenium/node-chrome:latest
           ports:
             - containerPort: 5555
+              protocol: TCP
           volumeMounts:
             - mountPath: /dev/shm
               name: dshm
           env:
             - name: SE_EVENT_BUS_HOST
               value: "selenium-hub"
-            - name: SE_EVENT_BUS_SUBSCRIBE_PORT
-              value: "4443"
             - name: SE_EVENT_BUS_PUBLISH_PORT
               value: "4442"
+            - name: SE_EVENT_BUS_SUBSCRIBE_PORT
+              value: "4443"
+            - name: SE_NODE_MAX_SESSIONS
+              value: "5"
+            - name: SE_NODE_SESSION_TIMEOUT
+              value: "300"
+            - name: SE_NODE_OVERRIDE_MAX_SESSIONS
+              value: "true"
           resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
             limits:
               memory: "1000Mi"
-              cpu: ".5"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /status
+              port: 5555
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /status
+              port: 5555
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+
 ---
+# Firefox Node Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: selenium-node-firefox
+  namespace: selenium
   labels:
     app: selenium-node-firefox
+    component: node
+    browser: firefox
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: selenium-node-firefox
+      component: node
+      browser: firefox
   template:
     metadata:
       labels:
         app: selenium-node-firefox
+        component: node
+        browser: firefox
     spec:
       volumes:
         - name: dshm
           emptyDir:
             medium: Memory
+            sizeLimit: 2Gi
       containers:
         - name: selenium-node-firefox
-          image: selenium/node-firefox:4.0
+          image: selenium/node-firefox:latest
           ports:
             - containerPort: 5555
+              protocol: TCP
           volumeMounts:
             - mountPath: /dev/shm
               name: dshm
           env:
             - name: SE_EVENT_BUS_HOST
               value: "selenium-hub"
-            - name: SE_EVENT_BUS_SUBSCRIBE_PORT
-              value: "4443"
             - name: SE_EVENT_BUS_PUBLISH_PORT
               value: "4442"
+            - name: SE_EVENT_BUS_SUBSCRIBE_PORT
+              value: "4443"
+            - name: SE_NODE_MAX_SESSIONS
+              value: "5"
+            - name: SE_NODE_SESSION_TIMEOUT
+              value: "300"
+            - name: SE_NODE_OVERRIDE_MAX_SESSIONS
+              value: "true"
           resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
             limits:
               memory: "1000Mi"
-              cpu: ".5"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /status
+              port: 5555
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /status
+              port: 5555
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+
 ---
+# Chrome Node Service (Optional - for direct access)
 apiVersion: v1
 kind: Service
 metadata:
   name: selenium-node-chrome
-spec:
-  selector:
+  namespace: selenium
+  labels:
     app: selenium-node-chrome
+    component: node
+    browser: chrome
+spec:
+  type: ClusterIP
   ports:
     - port: 5555
+      targetPort: 5555
+      protocol: TCP
+  selector:
+    app: selenium-node-chrome
+    component: node
+    browser: chrome
 
+---
+# Firefox Node Service (Optional - for direct access)
+apiVersion: v1
+kind: Service
+metadata:
+  name: selenium-node-firefox
+  namespace: selenium
+  labels:
+    app: selenium-node-firefox
+    component: node
+    browser: firefox
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5555
+      targetPort: 5555
+      protocol: TCP
+  selector:
+    app: selenium-node-firefox
+    component: node
+    browser: firefox
+
+---
+# Optional: Ingress for external access (if you have Ingress controller)
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: selenium-hub-ingress
+#   namespace: selenium
+#   annotations:
+#     kubernetes.io/ingress.class: nginx
+# spec:
+#   rules:
+#   - host: selenium.yourdomain.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: selenium-hub
+#             port:
+#               number: 4444

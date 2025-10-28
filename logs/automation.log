@@ -232,3 +232,119 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 2025-10-27 21:32:55.995 [main] WARN  com.UI.tests.LoginTest - Unexpected test status for test: testSuccessfulLogin2
 2025-10-27 21:32:56.247 [main] INFO  com.UI.reports.ExtentReportManager - ExtentReports flushed to disk
 2025-10-27 21:32:56.248 [main] INFO  com.UI.tests.LoginTest - Test Suite completed
+2025-10-27 21:52:37.767 [main] INFO  com.UI.config.ConfigManager - Configuration properties loaded successfully
+2025-10-27 21:52:38.019 [main] INFO  com.UI.reports.ExtentReportManager - ExtentReports initialized. Report will be saved to: test-output/reports\TestReport_20251027_215237.html
+2025-10-27 21:52:38.019 [main] INFO  com.UI.tests.ExcelDrivenLoginTest - Test Suite setup completed
+2025-10-27 21:52:38.027 [main] INFO  com.UI.listeners.TestListener - Test Suite started: Dummy Site Tests
+2025-10-27 21:52:38.027 [main] INFO  com.UI.listeners.AllureListener - Test Suite started: Dummy Site Tests
+2025-10-27 21:52:38.058 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.tests.LoginTest - Starting test: testSuccessfulLogin
+2025-10-27 21:52:38.061 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.drivers.DriverManager - Initializing WebDriver: Browser=chrome, Mode=local, Headless=false
+2025-10-27 21:52:39.147 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.utils.ExcelUtil - Successfully read 2 rows from Excel file: src/test/resources/testdata/login_test_data.xlsx
+2025-10-27 21:52:39.154 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.tests.ExcelDrivenLoginTest - Starting test: testLoginWithExcelData
+2025-10-27 21:52:39.155 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.tests.ExcelDrivenLoginTest - Test Parameters: {password=admin, expectedError=, shouldSucceed=true, username=admin}
+2025-10-27 21:52:39.155 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.drivers.DriverManager - Initializing WebDriver: Browser=chrome, Mode=local, Headless=false
+2025-10-27 21:52:40.566 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.drivers.DriverManager - WebDriver initialized successfully
+2025-10-27 21:52:40.566 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.drivers.DriverManager - WebDriver initialized successfully
+2025-10-27 21:52:40.651 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.listeners.TestListener - Test started: testLoginWithExcelData
+2025-10-27 21:52:40.651 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.listeners.TestListener - Test started: testSuccessfulLogin
+2025-10-27 21:52:40.651 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.listeners.TestListener - Test parameters: {password=admin, expectedError=, shouldSucceed=true, username=admin}
+2025-10-27 21:52:40.651 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.listeners.AllureListener - Starting test: testSuccessfulLogin
+2025-10-27 21:52:40.651 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.listeners.AllureListener - Starting test: testLoginWithExcelData
+2025-10-27 21:52:40.652 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.tests.ExcelDrivenLoginTest - Testing login with username: admin
+2025-10-27 21:52:44.587 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.pages.LoginPage - Navigated to URL: http://10.119.32.132:8084/da/
+2025-10-27 21:52:44.587 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.pages.LoginPage - Navigated to Login page
+2025-10-27 21:52:44.835 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.pages.LoginPage - Navigated to URL: http://10.119.32.132:8084/da/
+2025-10-27 21:52:44.835 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.pages.LoginPage - Navigated to Login page
+2025-10-27 21:52:44.884 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.pages.LoginPage - Sent Value to User name field
+2025-10-27 21:52:45.760 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.pages.LoginPage - Sent Value to Password field
+2025-10-27 21:52:45.826 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.pages.LoginPage - Sent Value to User name field
+2025-10-27 21:52:45.975 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.pages.LoginPage - Sent Value to Password field
+2025-10-27 21:52:46.121 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.pages.LoginPage - Clicked user profile link
+2025-10-27 21:52:46.121 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.tests.ExcelDrivenLoginTest - Successfully logged in
+2025-10-27 21:52:46.126 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.listeners.AllureListener - Test passed: testLoginWithExcelData
+2025-10-27 21:52:46.126 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.listeners.TestListener - Test passed: testLoginWithExcelData
+2025-10-27 21:52:46.162 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.tests.ExcelDrivenLoginTest - Test passed: testLoginWithExcelData
+2025-10-27 21:52:46.569 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.drivers.DriverManager - WebDriver closed and removed from ThreadLocal
+2025-10-27 21:52:46.571 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.tests.ExcelDrivenLoginTest - Starting test: testLoginWithExcelData
+2025-10-27 21:52:46.577 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.tests.ExcelDrivenLoginTest - Test Parameters: {password=12234.0, expectedError=, shouldSucceed=false, username=admin}
+2025-10-27 21:52:46.577 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.drivers.DriverManager - Initializing WebDriver: Browser=chrome, Mode=local, Headless=false
+2025-10-27 21:52:47.567 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.drivers.DriverManager - WebDriver initialized successfully
+2025-10-27 21:52:47.577 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.listeners.TestListener - Test started: testLoginWithExcelData
+2025-10-27 21:52:47.577 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.listeners.TestListener - Test parameters: {password=12234.0, expectedError=, shouldSucceed=false, username=admin}
+2025-10-27 21:52:47.577 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.listeners.AllureListener - Starting test: testLoginWithExcelData
+2025-10-27 21:52:47.577 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.tests.ExcelDrivenLoginTest - Testing login with username: admin
+2025-10-27 21:52:51.816 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.pages.LoginPage - Navigated to URL: http://10.119.32.132:8084/da/
+2025-10-27 21:52:51.816 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.pages.LoginPage - Navigated to Login page
+2025-10-27 21:52:52.982 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.pages.LoginPage - Sent Value to User name field
+2025-10-27 21:52:53.143 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.pages.LoginPage - Sent Value to Password field
+2025-10-27 21:52:53.272 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.pages.LoginPage - Clicked user profile link
+2025-10-27 21:52:53.272 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.tests.ExcelDrivenLoginTest - Failed to log in
+2025-10-27 21:52:53.272 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.listeners.AllureListener - Test passed: testLoginWithExcelData
+2025-10-27 21:52:53.272 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.listeners.TestListener - Test passed: testLoginWithExcelData
+2025-10-27 21:52:53.279 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.tests.ExcelDrivenLoginTest - Test passed: testLoginWithExcelData
+2025-10-27 21:52:53.606 [TestNG-test=Dummy Site Tests-1] INFO  com.UI.drivers.DriverManager - WebDriver closed and removed from ThreadLocal
+2025-10-27 21:52:57.863 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.pages.LoginPage - Clicked user profile link
+2025-10-27 21:52:57.863 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.listeners.AllureListener - Test passed: testSuccessfulLogin
+2025-10-27 21:52:57.863 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.listeners.TestListener - Test passed: testSuccessfulLogin
+2025-10-27 21:52:57.875 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.tests.LoginTest - Test passed: testSuccessfulLogin
+2025-10-27 21:52:58.524 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.drivers.DriverManager - WebDriver closed and removed from ThreadLocal
+2025-10-27 21:52:58.526 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.tests.LoginTest - Starting test: testSuccessfulLogin2
+2025-10-27 21:52:58.526 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.drivers.DriverManager - Initializing WebDriver: Browser=chrome, Mode=local, Headless=false
+2025-10-27 21:52:59.716 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.drivers.DriverManager - WebDriver initialized successfully
+2025-10-27 21:52:59.732 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.listeners.TestListener - Test started: testSuccessfulLogin2
+2025-10-27 21:52:59.732 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.listeners.AllureListener - Starting test: testSuccessfulLogin2
+2025-10-27 21:53:03.998 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.pages.LoginPage - Navigated to URL: http://10.119.32.132:8084/da/
+2025-10-27 21:53:03.998 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.pages.LoginPage - Navigated to Login page
+2025-10-27 21:53:04.767 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.pages.LoginPage - Sent Value to User name field
+2025-10-27 21:53:04.838 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.pages.LoginPage - Sent Value to Password field
+2025-10-27 21:53:04.902 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.pages.LoginPage - Clicked user profile link
+2025-10-27 21:53:04.902 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.listeners.AllureListener - Test passed: testSuccessfulLogin2
+2025-10-27 21:53:04.902 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.listeners.TestListener - Test passed: testSuccessfulLogin2
+2025-10-27 21:53:04.902 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.tests.LoginTest - Test passed: testSuccessfulLogin2
+2025-10-27 21:53:05.179 [TestNG-test=Dummy Site Tests-2] INFO  com.UI.drivers.DriverManager - WebDriver closed and removed from ThreadLocal
+2025-10-27 21:53:05.181 [main] INFO  com.UI.listeners.AllureListener - Test Suite finished: Dummy Site Tests
+2025-10-27 21:53:05.181 [main] INFO  com.UI.listeners.TestListener - Test Suite finished: Dummy Site Tests
+2025-10-27 21:53:05.181 [main] INFO  com.UI.listeners.TestListener - Test Results Summary - Passed: 4, Failed: 0, Skipped: 0
+2025-10-27 21:53:05.444 [main] INFO  com.UI.reports.ExtentReportManager - ExtentReports flushed to disk
+2025-10-27 21:53:05.444 [main] INFO  com.UI.tests.ExcelDrivenLoginTest - Test Suite completed
+2025-10-27 22:51:56.680 [main] INFO  com.UI.config.ConfigManager - Configuration properties loaded successfully
+2025-10-27 22:51:56.939 [main] INFO  com.UI.reports.ExtentReportManager - ExtentReports initialized. Report will be saved to: test-output/reports\TestReport_20251027_225156.html
+2025-10-27 22:51:56.939 [main] INFO  com.UI.tests.LoginTest - Test Suite setup completed
+2025-10-27 22:51:56.980 [main] INFO  com.UI.tests.LoginTest - Starting test: testSuccessfulLogin
+2025-10-27 22:51:56.981 [main] INFO  com.UI.drivers.DriverManager - Initializing WebDriver: Browser=chrome, Mode=remote, Headless=false
+2025-10-27 22:52:02.359 [main] INFO  com.UI.drivers.DriverManager - WebDriver initialized successfully
+2025-10-27 22:52:07.059 [main] INFO  com.UI.pages.LoginPage - Navigated to URL: http://10.119.32.132:8084/da/
+2025-10-27 22:52:07.059 [main] INFO  com.UI.pages.LoginPage - Navigated to Login page
+2025-10-27 22:52:09.267 [main] INFO  com.UI.pages.LoginPage - Sent Value to User name field
+2025-10-27 22:52:09.667 [main] INFO  com.UI.pages.LoginPage - Sent Value to Password field
+2025-10-27 22:52:40.273 [main] ERROR com.UI.tests.LoginTest - Test failed: testSuccessfulLogin
+2025-10-27 22:52:40.276 [main] ERROR com.UI.tests.LoginTest - Failure reason: timeout: Timed out receiving message from renderer: 30.000
+  (Session info: chrome=141.0.7390.107)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.22'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [9516be041d7ddfc3cfe6a2a608ba613b, clickElement {id=f.12B37715DF1CC1045689D5B7A71FDF26.d.C7255964BB56FE3325DCA0C5B0EF25CF.e.8}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.107, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35049}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.1.0.16:4444/session..., se:cdpVersion: 141.0.7390.107, se:containerName: selenium-node-chrome-64554b..., se:deleteSessionOnUi: true, se:downloadsEnabled: true, se:noVncPort: 7900, se:vnc: ws://10.1.0.16:4444/session..., se:vncEnabled: true, se:vncLocalAddress: ws://10.1.0.16:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[RemoteWebDriver: chrome on linux (9516be041d7ddfc3cfe6a2a608ba613b)] -> id: login-submit-btn]
+Session ID: 9516be041d7ddfc3cfe6a2a608ba613b
+2025-10-27 22:52:40.660 [main] INFO  com.UI.drivers.DriverManager - WebDriver closed and removed from ThreadLocal
+2025-10-27 22:52:40.681 [main] INFO  com.UI.tests.LoginTest - Starting test: testSuccessfulLogin2
+2025-10-27 22:52:40.682 [main] INFO  com.UI.drivers.DriverManager - Initializing WebDriver: Browser=chrome, Mode=remote, Headless=false
+2025-10-27 22:52:45.929 [main] INFO  com.UI.drivers.DriverManager - WebDriver initialized successfully
+2025-10-27 22:52:51.024 [main] INFO  com.UI.pages.LoginPage - Navigated to URL: http://10.119.32.132:8084/da/
+2025-10-27 22:52:51.024 [main] INFO  com.UI.pages.LoginPage - Navigated to Login page
+2025-10-27 22:52:52.516 [main] INFO  com.UI.pages.LoginPage - Sent Value to User name field
+2025-10-27 22:52:52.847 [main] INFO  com.UI.pages.LoginPage - Sent Value to Password field
+2025-10-27 22:53:23.355 [main] ERROR com.UI.tests.LoginTest - Test failed: testSuccessfulLogin2
+2025-10-27 22:53:23.358 [main] ERROR com.UI.tests.LoginTest - Failure reason: timeout: Timed out receiving message from renderer: 30.000
+  (Session info: chrome=141.0.7390.107)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.22'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [92462c30cf2d6b73c0156113278515b3, clickElement {id=f.E80CFD37605EA0DDFC40224CB2A0C964.d.A416D620F01776138F59C124E941E02F.e.8}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.107, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37691}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.1.0.15:4444/session..., se:cdpVersion: 141.0.7390.107, se:containerName: selenium-node-chrome-64554b..., se:deleteSessionOnUi: true, se:downloadsEnabled: true, se:noVncPort: 7900, se:vnc: ws://10.1.0.15:4444/session..., se:vncEnabled: true, se:vncLocalAddress: ws://10.1.0.15:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[RemoteWebDriver: chrome on linux (92462c30cf2d6b73c0156113278515b3)] -> id: login-submit-btn]
+Session ID: 92462c30cf2d6b73c0156113278515b3
+2025-10-27 22:53:23.733 [main] INFO  com.UI.drivers.DriverManager - WebDriver closed and removed from ThreadLocal
+2025-10-27 22:53:24.960 [main] INFO  com.UI.reports.ExtentReportManager - ExtentReports flushed to disk
+2025-10-27 22:53:24.960 [main] INFO  com.UI.tests.LoginTest - Test Suite completed
