@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Test Automation Suite" parallel="classes" thread-count="3">
-    <listeners>
-        <listener class-name="com.UI.listeners.TestListener" />
-        <listener class-name="com.UI.listeners.AllureListener" />
-    </listeners>
     
     <test name="Dummy Site Tests">
         <packages>
 
-            <package name="com.UI.tests" />
+            <package name="com.API.tests" />
         </packages>
     </test>
 </suite>
